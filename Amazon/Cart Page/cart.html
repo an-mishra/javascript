@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <!-- CSS Files Lnk-->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="cart.css" />
+
+    <!-- Favicon Icon -->
+    <link rel="icon" href="../../Images/amazon-favicon.png" />
+
+    <!-- Fontawesome For Icons -->
+    <script
+      src="https://kit.fontawesome.com/17b927db1b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="#top">
+      <!-- Opacity Box -->
+      <div class="header-opacity-box"></div>
+
+      <!-- Navbar -->
+      <div class="navbar">
+        <!-- Nav Logo -->
+        <div class="nav-logo border">
+          <a href="index.html"
+            ><img src="../../Images/amazon-logo.png" alt="Amazon Logo" />
+          </a>
+          <p>.in</p>
+        </div>
+
+        <!-- Nav Address -->
+        <div
+          class="nav-address border"
+          onclick="showLocationDiv(); showMainOpacity();"
+        >
+          <p class="add-first">Deliver to</p>
+          <div class="add-icon">
+            <i class="fa-solid fa-location-dot"></i>
+            <p class="location-text">Add Location</p>
+          </div>
+
+          <div class="select-location-div">
+            <div class="select-location">
+              <div class="header">
+                <h3>Choose your location</h3>
+              </div>
+
+              <div class="location-main">
+                <button>Add Current Location</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav Search -->
+        <div class="nav-search">
+          <select class="search-select">
+            <option>All</option>
+            <option value="">Books</option>
+            <option value="">Clothes</option>
+            <option value="">Alexa Talk</option>
+            <option value="">Furniture</option>
+            <option value="">Mini Premium</option>
+          </select>
+          <input
+            placeholder="Search Amazon.in"
+            class="search-input"
+            onclick="showMainOpacity(); showBorder();"
+          />
+          <div class="search-icon search-color">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <!-- Nav Language -->
+        <div
+          class="nav-lang border"
+          onmouseover="showMainOpacity();"
+          onmouseout="removeOpacity();"
+        >
+          <div class="nav-lang-icon">
+            <img src="../Images/india-flag-icon.png" alt="Indian Flag" />
+          </div>
+
+          <div class="lang-section">
+            <h3 class="language-value">EN</h3>
+            <i class="fa-solid fa-sort-down"></i>
+
+            <!-- Language Dropdown -->
+            <div class="lang-dropdown">
+              <div class="langauage-default flex-div lang-div">
+                <input
+                  name="language"
+                  type="radio"
+                  value="EN"
+                  onclick="changeLangValue('EN');"
+                />
+                <h3>English - EN</h3>
+              </div>
+
+              <div class="language-list">
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="HI"
+                    onclick="changeLangValue('HI');"
+                  />
+                  <h3>हिन्दी - HI</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="TA"
+                    onclick="changeLangValue('TA');"
+                  />
+                  <h3>தமிழ் - TA</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="TE"
+                    onclick="changeLangValue('TE');"
+                  />
+                  <h3>తెలుగు - TE</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="KN"
+                    onclick="changeLangValue('KN');"
+                  />
+                  <h3>ಕನ್ನಡ - KN</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="ML"
+                    onclick="changeLangValue('ML');"
+                  />
+                  <h3>മലയാളം - ML</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="BN"
+                    onclick="changeLangValue('BN');"
+                  />
+                  <h3>বাংলা - BN</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="MR"
+                    onclick="changeLangValue('MR');"
+                  />
+                  <h3>मराठी - MR</h3>
+                </div>
+
+                <a href="#" class="lang-learn-more">Learn More</a>
+              </div>
+
+              <!-- Language Dropdown Footer -->
+              <div class="lang-dropdown-footer">
+                <div class="footer-paragraph flex-div">
+                  <img src="../Images/india-flag-icon.png" alt="Indian Flag" />
+                  <p>You are shopping on Amazon.in</p>
+                </div>
+
+                <div class="country-region">
+                  <a href="#">Change country/region</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav Signin -->
+        <div
+          class="nav-signin border signin-order"
+          onmouseover="showMainOpacity();"
+          onmouseout="removeOpacity();"
+        >
+          <li><span>Hello, Sign in</span></li>
+          <li class="nav-sec">
+            <a href="#">Account & Lists</a>
+            <i class="fa-solid fa-sort-down"></i>
+            <ul class="nav-dropdown">
+              <div class="nav-login">
+                <a href="./Login/login.html"><button>Sign in</button></a>
+                <p>
+                  New customer ?
+                  <a href="./Signup/signup.html"><span>Start here.</span></a>
+                </p>
+              </div>
+
+              <div class="nav-list-account">
+                <div class="nav-list">
+                  <h3>Your Lists</h3>
+
+                  <div class="lists">
+                    <li>Create a Wish List</li>
+                    <li>Wish from Any Website</li>
+                    <li>Baby Wishlist</li>
+                    <li>Discover Your Style</li>
+                    <li>Explore Showroom</li>
+                  </div>
+                </div>
+
+                <div class="nav-account">
+                  <h3>Your Account</h3>
+                  <div class="lists">
+                    <li>Your Account</li>
+                    <li>Your Order</li>
+                    <li>Your Wish List</li>
+                    <li>Your Recomendations</li>
+                    <li>Your Prime Membership</li>
+                    <li>Your Prime Video</li>
+                    <li>Your Subscribe & Save Items</li>
+                    <li>Memberships & Subscriptions</li>
+                    <li>Your Seller Account</li>
+                    <li>Manage Your Content and Devices</li>
+                    <li>Your Free Amazon Business Account</li>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </div>
+
+        <!-- Nav Order -->
+        <div class="nav-return border signin-order">
+          <p><span>Returns</span></p>
+          <p class="nav-sec">& Orders</p>
+        </div>
+
+        <!-- Nav Cart -->
+        <div class="nav-cart border">
+          <img src="../Images/Shopping-Cart.png" alt="" />
+          <p>Cart</p>
+        </div>
+      </div>
+
+      <!-- Menu Section -->
+      <div class="menu-section">
+        <input type="checkbox" id="check" />
+        <!-- Humbergurmenu Bar -->
+        <div class="humbergur-menu-bar">
+          <div class="hello-signin">
+            <div class="user-profile">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Hello, sign in</h3>
+
+            <label for="check" class="close-menu" onclick="removeOpacity();"
+              ><i class="fa-solid fa-xmark"></i
+            ></label>
+          </div>
+
+          <div class="humbergur-sections">
+            <div class="trending-content">
+              <h3>Trending</h3>
+              <ul class="trending-links">
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Movers and Shakers</a></li>
+              </ul>
+            </div>
+
+            <div class="digital-content trending-content">
+              <h3>Digital Content And Devices</h3>
+              <ul class="trending-links">
+                <li><a href="#">Amazon miniTV- Free entertainment</a></li>
+                <li><a href="#">Echo & Alexa</a></li>
+                <li><a href="#">Fire TV</a></li>
+                <li><a href="#">Kindle E-Readers & eBooks</a></li>
+                <li><a href="#">Audible Audiobooks</a></li>
+                <li><a href="#">Amazon Prime Video</a></li>
+                <li><a href="#">Amazon Prime Music</a></li>
+              </ul>
+            </div>
+
+            <div class="shop-category-content trending-content">
+              <h3>Shop By Category</h3>
+              <ul class="trending-links">
+                <li><a href="#">Mobiles, Computers</a></li>
+                <li><a href="#">TV, Appliances, Electronics</a></li>
+                <li><a href="#">Men's Fashion</a></li>
+                <li><a href="#">Women's Fashion</a></li>
+              </ul>
+            </div>
+
+            <div class="programs-features-content trending-content">
+              <h3>Programs & Features</h3>
+              <ul class="trending-links">
+                <li><a href="#">Amazon Pay</a></li>
+                <li><a href="#">Gift Cards & Mobile Recharges</a></li>
+                <li><a href="#">Amazon Launchpad</a></li>
+                <li><a href="#">Handloom and Handicrafts</a></li>
+              </ul>
+            </div>
+
+            <div class="help-settings-content trending-content">
+              <h3>Help & Settings</h3>
+              <ul class="trending-links">
+                <li><a href="#">Your Account</a></li>
+                <li><a href="#">Customer Sevice</a></li>
+                <li><a href="Login/login.html">Sign in</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <label
+          for="check"
+          class="humbergur-menu border2"
+          onclick="showMainOpacity(); showHeaderOpacity();"
+        >
+          <label for="check" class="open-menu"
+            ><i class="fa-solid fa-bars"></i
+          ></label>
+          All
+        </label>
+
+        <!-- Menus List Options -->
+        <ul class="menu-ops">
+          <a href="#" class="border2"><li>Fresh</li></a>
+          <a href="#" class="border2"><li>Amazon mini TV</li></a>
+          <a href="#" class="border2"><li>Sell</li></a>
+          <a href="#" class="border2"><li>Best Sellers</li></a>
+          <a href="#" class="border2"><li>Today's Deals</li></a>
+          <a href="#" class="border2"><li>Mobiles</li></a>
+          <a href="#" class="border2"><li>Electronics</li></a>
+          <a href="#" class="border2"><li>Prime</li></a>
+          <a href="#" class="border2"><li>Gift Ideas</li></a>
+          <a href="#" class="border2"><li>Customer Service</li></a>
+          <a href="#" class="border2"><li>New Releases</li></a>
+          <a href="#" class="border2"><li>Home & Kitchen</li></a>
+          <a href="Product Page/product.html" class="border2"
+            ><li>Fashion</li></a
+          >
+        </ul>
+      </div>
+
+      <!-- For Mobile Responsive -->
+      <div class="mobile-navbar">
+        <div class="logo-humbergur">
+          <div class="mobile-humbergur-menu">
+            <i class="fa-solid fa-bars"></i>
+            <div class="mobile-logo flex-div">
+              <img src="../Images/amazon-logo.png" alt="" />
+              <p>.in</p>
+            </div>
+          </div>
+
+          <div class="signin-cart">
+            <div class="signin-profile">
+              <a href="#">Sign in<i class="fa-solid fa-chevron-right"></i></a>
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="cart">
+              <img src="../Images/Shopping-Cart.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="search-bar">
+          <div class="search-box">
+            <input type="text" placeholder="Search Amazon.in" />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+
+        <div class="menu-bar">
+          <div class="shop-by">
+            <p>Shop By</p>
+          </div>
+
+          <li><a href="#">Category</a></li>
+          <li><a href="#">Your Lists</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">Sell</a></li>
+        </div>
+      </div>
+
+      <div class="location-find">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>Delivering to Delhi 1110002 - Update location</p>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+
+      <div class="category-slider">
+        <!-- Slider Wrapper -->
+        <div class="slider-wrapper">
+          <!-- Slider Box -->
+          <div class="box-slider">
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img1.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img2.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img2.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img4.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img2.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img6.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img5.jpg" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img7.jpg" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img9.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img10.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+            <div class="product-box-slider">
+              <div class="product-box-image">
+                <img src="../Images/product-slider-img11.png" alt="" />
+              </div>
+              <div class="product-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <!-- Shopping Cart Container -->
+      <div class="shopping-cart-container">
+        <!-- Shopping Cart Left -->
+        <div class="shopping-cart-left">
+          <!-- Cart Header -->
+          <div class="cart-header">
+            <h1>Shopping Cart</h1>
+            <p>Deselect all items</p>
+            <span>Price</span>
+          </div>
+
+          <!-- Cart Products -->
+          <div class="cart-product">
+            <div class="cart-product-img">
+              <input type="checkbox" />
+              <img src="cart-images/cart-product-img1.jpg" alt="" />
+            </div>
+
+            <div class="cart-product-details">
+              <h3>
+                TechMount� Voice Upgraded Lavalier Lapel Microphone,
+                Omnidirectional Condenser Mic with 3.5mm Jack, Useful for
+                YouTube, Interview, Studio, Video, Recording,Noise Cancelling
+                Mic(black-60 Inch Long)
+              </h3>
+              <p class="in-stock">In stock</p>
+              <p>Eligible for FREE Shipping</p>
+              <img src="cart-images/amazon-tag.png" alt="" />
+              <p>Sold by <a href="#">TASQ AND COMPANY</a></p>
+              <p>
+                Gift options not available.
+                <a href="#">Learn more</a>
+              </p>
+              <div class="quantity-delete-buttons">
+                <select>
+                  <option>Qty: 1</option>
+                  <option value="0">0(Delete)</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10+</option>
+                </select>
+
+                <span>Delete</span>
+                <span>Save for later</span>
+                <span>See more like this</span>
+                <a href="#">Share</a>
+              </div>
+            </div>
+
+            <div class="cart-product-price">
+              <span>₹</span>
+              <h3>399.00</h3>
+            </div>
+          </div>
+
+          <div class="cart-product">
+            <div class="cart-product-img">
+              <input type="checkbox" />
+              <img src="cart-images/cart-product-img2.jpg" alt="" />
+            </div>
+
+            <div class="cart-product-details">
+              <h3>
+                SWAPKART Flexible Mobile Tabletop Stand, Metal Built -for Video,
+                Heavy Duty Foldable Lazy Bracket Clip Mount, Multi Angle Clamp
+                for All Smartphones (Pack of 1) Multi Colour
+              </h3>
+              <p class="in-stock">In stock</p>
+              <p>Eligible for FREE Shipping</p>
+              <img src="cart-images/amazon-tag.png" alt="" />
+              <p>Sold by <a href="#">TASQ AND COMPANY</a></p>
+              <p>
+                Gift options not available.
+                <a href="#">Learn more</a>
+              </p>
+              <div class="quantity-delete-buttons">
+                <select>
+                  <option>Qty: 1</option>
+                  <option value="0">0(Delete)</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10+</option>
+                </select>
+
+                <span>Delete</span>
+                <span>Save for later</span>
+                <span>See more like this</span>
+                <a href="#">Share</a>
+              </div>
+            </div>
+
+            <div class="cart-product-price">
+              <span>₹</span>
+              <h3>251.00</h3>
+            </div>
+          </div>
+
+          <div class="subtotal-items">
+            <p>Subtotal (2 items): ₹<b>650.00</b></p>
+          </div>
+        </div>
+
+        <!-- Shopping Cart Right -->
+        <div class="shopping-cart-right">
+          <div class="eligible-free-delivery">
+            <div class="exclamation-mark">i</div>
+            <p>
+              Add <span>₹248.00</span> of eligible items to your order to
+              qualify for FREE Delivery. <a href="#">Details</a>
+            </p>
+          </div>
+          <p>Subtotal (2 items): ₹<b>650.00</b></p>
+
+          <button>Proceed to Buy</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer onclick="removeOpacity();">
+      <div class="back-to-top">
+        <a href="#top"> Back to Top </a>
+      </div>
+
+      <div class="footer-contents">
+        <div class="footer-text-content">
+          <div class="footer-text-box">
+            <h3>Get to Know Us</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press Releases</a></li>
+              <li><a href="#">Amazon Science</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-text-box">
+            <h3>Connect with Us</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-text-box">
+            <h3>Make Money with Us</h3>
+            <ul>
+              <li><a href="#">Sell on Amazon</a></li>
+              <li><a href="#">Sell under Amazon Accelerator</a></li>
+              <li><a href="#">Protect and Build Your Brand</a></li>
+              <li><a href="#">Amazon Global Selling</a></li>
+              <li><a href="#">Become an Affiliate</a></li>
+              <li><a href="#">Fulfilment by Amazon</a></li>
+              <li><a href="#">Advertise Your Products</a></li>
+              <li><a href="#">Amazon Pay on Merchants</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-text-box">
+            <h3>Let Us Help You</h3>
+            <ul>
+              <li><a href="#">COVID-19 and Amazon</a></li>
+              <li><a href="#">Your Account</a></li>
+              <li><a href="#">Returns Centre</a></li>
+              <li><a href="#">100% Purchase Protection</a></li>
+              <li><a href="#">Amazon App Download</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-country-content">
+          <div class="footer-language flex-div">
+            <img src="Images/amazon-logo.png" alt="" />
+            <div class="footer-language-box flex-div">
+              <img src="Images/globe.png" alt="" />
+              <p>English</p>
+              <div class="footer-arrow">
+                <i class="fa-solid fa-caret-up"></i>
+                <i class="fa-solid fa-caret-down"></i>
+              </div>
+
+              <!-- Language Dropdown -->
+              <div class="footer-lang-dropdown">
+                <div class="footer-langauage-default flex-div lang-div">
+                  <input name="language" type="radio" />
+                  <h3>English - EN</h3>
+                </div>
+
+                <div class="footer-language-list">
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>हिन्दी - HI</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>தமிழ் - TA</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>తెలుగు - TE</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>ಕನ್ನಡ - KN</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>മലയാളം - ML</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>বাংলা - BN</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>मराठी - MR</h3>
+                  </div>
+
+                  <a href="#" class="footer-lang-learn-more">Learn More</a>
+                </div>
+
+                <!-- Language Dropdown Footer -->
+                <div class="footer-lang-dropdown-footer">
+                  <div class="footer-footer-paragraph flex-div">
+                    <img src="Images/india-flag-icon.png" alt="Indian Flag" />
+                    <p>You are shopping on Amazon.in</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-country">
+            <ul>
+              <li><a href="#">Australia</a></li>
+              <li><a href="#">Brazil</a></li>
+              <li><a href="#">Canada</a></li>
+              <li><a href="#">China</a></li>
+              <li><a href="#">France</a></li>
+              <li><a href="#">Germany</a></li>
+              <li><a href="#">Italy</a></li>
+              <li><a href="#">Japan</a></li>
+              <li><a href="#">Maxico</a></li>
+              <li><a href="#">Netherlands</a></li>
+              <li><a href="#">Poland</a></li>
+              <li><a href="#">Singapore</a></li>
+              <li><a href="#">Spain</a></li>
+              <li><a href="#">Turkey</a></li>
+              <li><a href="#">United Arab Emirates</a></li>
+              <li><a href="#">United Kingdom</a></li>
+              <li><a href="#">United States</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-links-copyright">
+        <div class="footer-links">
+          <div class="footer-links1">
+            <ul class="link-box">
+              <h3>AbeBooks</h3>
+              <li>
+                <a href="#"
+                  >Books, art & <br />
+                  collectibles</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Amazon Web Services</h3>
+              <li>
+                <a href="#"
+                  >Scalable Cloud <br />
+                  Computing Services</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Audible</h3>
+              <li>
+                <a href="#"
+                  >Download <br />
+                  Audio Books</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>IMDb</h3>
+              <li>
+                <a href="#"
+                  >Movies, TV <br />
+                  & Celebrities</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links2">
+            <ul class="link-box">
+              <h3>Shopbop</h3>
+              <li>
+                <a href="#"
+                  >Designer <br />
+                  Fashion Brands</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Amazon Business</h3>
+              <li>
+                <a href="#"
+                  >Everything For <br />
+                  Your Business</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Prime Now</h3>
+              <li>
+                <a href="#"
+                  >2-Hour Delivery <br />
+                  on Everyday Items</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Amazon Prime Music</h3>
+              <li>
+                <a href="#"
+                  >100 million songs, ad-free <br />
+                  Over 15 million podcast episodes</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="copyright-links">
+            <a href="#">Conditions of Use & Sale</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Intrest-Based Ads</a>
+          </div>
+          <div class="copyright-text">
+            © 1996-2024, Amazon.com, Inc. or its affiliates
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

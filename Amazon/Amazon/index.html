@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon</title>
+    <!-- CSS Files Lnk-->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+
+    <!-- Favicon Icon -->
+    <link rel="icon" href="Images/amazon-favicon.png" />
+
+    <!-- Fontawesome For Icons -->
+    <script
+      src="https://kit.fontawesome.com/17b927db1b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="#top">
+      <!-- Opacity Box -->
+      <div class="header-opacity-box"></div>
+
+      <!-- Navbar -->
+      <div class="navbar">
+        <!-- Nav Logo -->
+        <div class="nav-logo border">
+          <a href="index.html"
+            ><img src="Images/amazon-logo.png" alt="Amazon Logo" />
+          </a>
+          <p>.in</p>
+        </div>
+
+        <!-- Nav Address -->
+        <div
+          class="nav-address border"
+          onclick="showLocationDiv(); showMainOpacity();"
+        >
+          <p class="add-first">Deliver to</p>
+          <div class="add-icon">
+            <i class="fa-solid fa-location-dot"></i>
+            <p class="location-text">Add Location</p>
+          </div>
+
+          <div class="select-location-div">
+            <div class="select-location">
+              <div class="header">
+                <h3>Choose your location</h3>
+              </div>
+
+              <div class="location-main">
+                <button>Add Current Location</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav Search -->
+        <div class="nav-search">
+          <select class="search-select">
+            <option>All</option>
+            <option value="">Books</option>
+            <option value="">Clothes</option>
+            <option value="">Alexa Talk</option>
+            <option value="">Furniture</option>
+            <option value="">Mini Premium</option>
+          </select>
+          <input
+            placeholder="Search Amazon.in"
+            class="search-input"
+            onclick="showMainOpacity(); showBorder();"
+          />
+          <div class="search-icon search-color">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <!-- Nav Language -->
+        <div
+          class="nav-lang border"
+          onmouseover="showMainOpacity();"
+          onmouseout="removeOpacity();"
+        >
+          <div class="nav-lang-icon">
+            <img src="Images/india-flag-icon.png" alt="Indian Flag" />
+          </div>
+
+          <div class="lang-section">
+            <h3 class="language-value">EN</h3>
+            <i class="fa-solid fa-sort-down"></i>
+
+            <!-- Language Dropdown -->
+            <div class="lang-dropdown">
+              <div class="langauage-default flex-div lang-div">
+                <input
+                  name="language"
+                  type="radio"
+                  value="EN"
+                  onclick="changeLangValue('EN');"
+                />
+                <h3>English - EN</h3>
+              </div>
+
+              <div class="language-list">
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="HI"
+                    onclick="changeLangValue('HI');"
+                  />
+                  <h3>हिन्दी - HI</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="TA"
+                    onclick="changeLangValue('TA');"
+                  />
+                  <h3>தமிழ் - TA</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="TE"
+                    onclick="changeLangValue('TE');"
+                  />
+                  <h3>తెలుగు - TE</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="KN"
+                    onclick="changeLangValue('KN');"
+                  />
+                  <h3>ಕನ್ನಡ - KN</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="ML"
+                    onclick="changeLangValue('ML');"
+                  />
+                  <h3>മലയാളം - ML</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="BN"
+                    onclick="changeLangValue('BN');"
+                  />
+                  <h3>বাংলা - BN</h3>
+                </div>
+                <div class="flex-div lang-div">
+                  <input
+                    name="language"
+                    type="radio"
+                    value="MR"
+                    onclick="changeLangValue('MR');"
+                  />
+                  <h3>मराठी - MR</h3>
+                </div>
+
+                <a href="#" class="lang-learn-more">Learn More</a>
+              </div>
+
+              <!-- Language Dropdown Footer -->
+              <div class="lang-dropdown-footer">
+                <div class="footer-paragraph flex-div">
+                  <img src="Images/india-flag-icon.png" alt="Indian Flag" />
+                  <p>You are shopping on Amazon.in</p>
+                </div>
+
+                <div class="country-region">
+                  <a href="#">Change country/region</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav Signin -->
+        <div
+          class="nav-signin border signin-order"
+          onmouseover="showMainOpacity();"
+          onmouseout="removeOpacity();"
+        >
+          <li><span>Hello, Sign in</span></li>
+          <li class="nav-sec">
+            <a href="#">Account & Lists</a>
+            <i class="fa-solid fa-sort-down"></i>
+            <ul class="nav-dropdown">
+              <div class="nav-login">
+                <a href="./Login/login.html"><button>Sign in</button></a>
+                <p>
+                  New customer ?
+                  <a href="./Signup/signup.html"><span>Start here.</span></a>
+                </p>
+              </div>
+
+              <div class="nav-list-account">
+                <div class="nav-list">
+                  <h3>Your Lists</h3>
+
+                  <div class="lists">
+                    <li>Create a Wish List</li>
+                    <li>Wish from Any Website</li>
+                    <li>Baby Wishlist</li>
+                    <li>Discover Your Style</li>
+                    <li>Explore Showroom</li>
+                  </div>
+                </div>
+
+                <div class="nav-account">
+                  <h3>Your Account</h3>
+                  <div class="lists">
+                    <li>Your Account</li>
+                    <li>Your Order</li>
+                    <li>Your Wish List</li>
+                    <li>Your Recomendations</li>
+                    <li>Your Prime Membership</li>
+                    <li>Your Prime Video</li>
+                    <li>Your Subscribe & Save Items</li>
+                    <li>Memberships & Subscriptions</li>
+                    <li>Your Seller Account</li>
+                    <li>Manage Your Content and Devices</li>
+                    <li>Your Free Amazon Business Account</li>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+        </div>
+
+        <!-- Nav Order -->
+        <div class="nav-return border signin-order">
+          <p><span>Returns</span></p>
+          <p class="nav-sec">& Orders</p>
+        </div>
+
+        <!-- Nav Cart -->
+        <a href="Cart Page/cart.html" class="nav-cart border">
+          <img src="Images/Shopping-Cart.png" alt="" />
+          <p>Cart</p>
+        </a>
+      </div>
+
+      <!-- Menu Section -->
+      <div class="menu-section">
+        <input type="checkbox" id="check" />
+        <!-- Humbergurmenu Bar -->
+        <div class="humbergur-menu-bar">
+          <div class="hello-signin">
+            <div class="user-profile">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>Hello, sign in</h3>
+
+            <label for="check" class="close-menu" onclick="removeOpacity();"
+              ><i class="fa-solid fa-xmark"></i
+            ></label>
+          </div>
+
+          <div class="humbergur-sections">
+            <div class="trending-content">
+              <h3>Trending</h3>
+              <ul class="trending-links">
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Movers and Shakers</a></li>
+              </ul>
+            </div>
+
+            <div class="digital-content trending-content">
+              <h3>Digital Content And Devices</h3>
+              <ul class="trending-links">
+                <li><a href="#">Amazon miniTV- Free entertainment</a></li>
+                <li><a href="#">Echo & Alexa</a></li>
+                <li><a href="#">Fire TV</a></li>
+                <li><a href="#">Kindle E-Readers & eBooks</a></li>
+                <li><a href="#">Audible Audiobooks</a></li>
+                <li><a href="#">Amazon Prime Video</a></li>
+                <li><a href="#">Amazon Prime Music</a></li>
+              </ul>
+            </div>
+
+            <div class="shop-category-content trending-content">
+              <h3>Shop By Category</h3>
+              <ul class="trending-links">
+                <li><a href="#">Mobiles, Computers</a></li>
+                <li><a href="#">TV, Appliances, Electronics</a></li>
+                <li><a href="#">Men's Fashion</a></li>
+                <li><a href="#">Women's Fashion</a></li>
+              </ul>
+            </div>
+
+            <div class="programs-features-content trending-content">
+              <h3>Programs & Features</h3>
+              <ul class="trending-links">
+                <li><a href="#">Amazon Pay</a></li>
+                <li><a href="#">Gift Cards & Mobile Recharges</a></li>
+                <li><a href="#">Amazon Launchpad</a></li>
+                <li><a href="#">Handloom and Handicrafts</a></li>
+              </ul>
+            </div>
+
+            <div class="help-settings-content trending-content">
+              <h3>Help & Settings</h3>
+              <ul class="trending-links">
+                <li><a href="#">Your Account</a></li>
+                <li><a href="#">Customer Sevice</a></li>
+                <li><a href="Login/login.html">Sign in</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <label
+          for="check"
+          class="humbergur-menu border2"
+          onclick="showMainOpacity(); showHeaderOpacity();"
+        >
+          <label for="check" class="open-menu"
+            ><i class="fa-solid fa-bars"></i
+          ></label>
+          All
+        </label>
+
+        <!-- Menus List Options -->
+        <ul class="menu-ops">
+          <a href="#" class="border2"><li>Fresh</li></a>
+          <a href="#" class="border2"><li>Amazon mini TV</li></a>
+          <a href="#" class="border2 remove-menu"><li>Sell</li></a>
+          <a href="#" class="border2 remove-menu"><li>Best Sellers</li></a>
+          <a href="#" class="border2"><li>Today's Deals</li></a>
+          <a href="#" class="border2"><li>Mobiles</li></a>
+          <a href="#" class="border2"><li>Electronics</li></a>
+          <a href="#" class="border2 remove-menu"><li>Prime</li></a>
+          <a href="#" class="border2 remove-menu"><li>Gift Ideas</li></a>
+          <a href="#" class="border2 remove-menu"><li>Customer Service</li></a>
+          <a href="#" class="border2"><li>New Releases</li></a>
+          <a href="#" class="border2"><li>Home & Kitchen</li></a>
+          <a href="./Product Page/product.html" class="border2"
+            ><li>Fashion</li></a
+          >
+        </ul>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main onclick="removeOpacity();">
+      <!-- Opacity Box -->
+      <div class="opacity-box"></div>
+
+      <!-- Hero Banner Section -->
+      <div class="hero-section">
+        <!-- Hero Slider -->
+        <div class="slider">
+          <section class="main-slider">
+            <div class="left-button slider-button" onclick="moveNext();">
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+
+            <img class="slider-image" alt="" onclick="stopSlideShow();" />
+
+            <div class="right-button slider-button" onclick="movePrevious();">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Product Boxes -->
+      <div class="product-boxes">
+        <!-- Product Box 1-->
+        <div class="product-box">
+          <h3>Up to 65% off | Deals on wide range of TVs</h3>
+          <div class="boxes">
+            <div class="box">
+              <img src="Images/box-img1.jpg" alt="" />
+              <p>Budget TVs | Starting ₹5,499</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img2.jpg" alt="" />
+              <p>4K TVs | Up to 18 months No Cost EMI</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img3.jpg" alt="" />
+              <p>Big Screens | Save up to ₹30,000</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img4.jpg" alt="" />
+              <p>Utra Premium TVs | Flat 50% off</p>
+            </div>
+          </div>
+          <a href="#">See all deals</a>
+        </div>
+
+        <!-- Product Box 2 -->
+        <div class="product-box">
+          <h3>Starting ₹79 | Home decor and furnishings</h3>
+          <div class="boxes">
+            <div class="box">
+              <img src="Images/box-img5.jpg" alt="" />
+              <p>Budget TVs | Starting ₹5,499</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img6.jpg" alt="" />
+              <p>4K TVs | Up to 18 months No Cost EMI</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img7.jpg" alt="" />
+              <p>Big Screens | Save up to ₹30,000</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img8.jpg" alt="" />
+              <p>Utra Premium TVs | Flat 50% off</p>
+            </div>
+          </div>
+          <a href="#">See all deals</a>
+        </div>
+
+        <!-- Product Box 3 -->
+        <div class="product-box">
+          <h3>Deals on smartphones that suits your budget</h3>
+          <div class="boxes">
+            <div class="box">
+              <img src="Images/box-img9.jpg" alt="" />
+              <p>Budget TVs | Starting ₹5,499</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img10.jpg" alt="" />
+              <p>4K TVs | Up to 18 months No Cost EMI</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img11.jpg" alt="" />
+              <p>Big Screens | Save up to ₹30,000</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img12.jpg" alt="" />
+              <p>Utra Premium TVs | Flat 50% off</p>
+            </div>
+          </div>
+          <a href="#">See all deals</a>
+        </div>
+
+        <!-- Product Box 4 -->
+        <div class="product-box">
+          <h3>Welcome offers just for you</h3>
+          <div class="boxes">
+            <img src="Images/box-img13.jpg" alt="" />
+          </div>
+          <a href="#">See all deals</a>
+        </div>
+
+        <!-- Product Box 5 -->
+        <div class="product-box">
+          <h3>Up to 70% off | Best sellers curated for your</h3>
+          <div class="boxes">
+            <div class="box">
+              <img src="Images/box-img14.jpg" alt="" />
+              <p>Budget TVs | Starting ₹5,499</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img15.jpg" alt="" />
+              <p>4K TVs | Up to 18 months No Cost EMI</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img16.jpg" alt="" />
+              <p>Big Screens | Save up to ₹30,000</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img17.jpg" alt="" />
+              <p>Utra Premium TVs | Flat 50% off</p>
+            </div>
+          </div>
+          <a href="#">See all deals</a>
+        </div>
+
+        <!-- Product Box 6 -->
+        <div class="product-box">
+          <h3>Up to 65% off | Bestselling appliances</h3>
+          <div class="boxes">
+            <div class="box">
+              <img src="Images/box-img18.jpg" alt="" />
+              <p>Budget TVs | Starting ₹5,499</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img19.jpg" alt="" />
+              <p>4K TVs | Up to 18 months No Cost EMI</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img20.jpg" alt="" />
+              <p>Big Screens | Save up to ₹30,000</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img21.jpg" alt="" />
+              <p>Utra Premium TVs | Flat 50% off</p>
+            </div>
+          </div>
+          <a href="#">See all deals</a>
+        </div>
+
+        <!-- Product Box 7 -->
+        <div class="product-box">
+          <h3>Up to 65% off | Deals on wide range of TVs</h3>
+          <div class="boxes">
+            <div class="box">
+              <img src="Images/box-img4.jpg" alt="" />
+              <p>Budget TVs | Starting ₹5,499</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img9.jpg" alt="" />
+              <p>4K TVs | Up to 18 months No Cost EMI</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img2.jpg" alt="" />
+              <p>Big Screens | Save up to ₹30,000</p>
+            </div>
+            <div class="box">
+              <img src="Images/box-img7.jpg" alt="" />
+              <p>Utra Premium TVs | Flat 50% off</p>
+            </div>
+          </div>
+          <a href="#">See all deals</a>
+        </div>
+
+        <!-- Product Box 8 -->
+        <div class="product-box">
+          <h3>Up to 75% off | Electronics & accessories</h3>
+          <div class="boxes">
+            <img src="Images/box-img22.jpg" alt="" />
+          </div>
+          <a href="#">See all deals</a>
+        </div>
+      </div>
+
+      <!-- Empty Box -->
+      <div class="main-empty-div"></div>
+
+      <!-- Main Products Sliders -->
+      <div class="main-product-slider-section">
+        <!-- Slider One -->
+        <div class="product-slider">
+          <div class="product-slider-heading flex-div">
+            <h3>Today's Deals</h3>
+            <span><a href="#">See all deals</a></span>
+          </div>
+
+          <div class="container">
+            <div class="slider-wrapper">
+              <button
+                id="prev-slide"
+                class="slide-button material-symbols-rounded"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <ul class="image-list">
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img1.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img2.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img18.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img4.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img5.jpg"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img6.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img7.jpg"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img8.jpg"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img9.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img10.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img11.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img12.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img13.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+                <div class="product-box-slider">
+                  <div class="product-box-image">
+                    <img
+                      class="image-item"
+                      src="Images/product-slider-img17.png"
+                      alt="img-1"
+                    />
+                  </div>
+                  <div class="product-text">
+                    <div class="product-text-upper">
+                      <div class="product-discount">
+                        <p>Up to 94% off</p>
+                      </div>
+                      <span> Deal of the Day </span>
+                    </div>
+                    <div class="product-text-lower">
+                      Travel Adapters And Electronic Accessories from RTS
+                    </div>
+                  </div>
+                </div>
+              </ul>
+              <button
+                id="next-slide"
+                class="slide-button material-symbols-rounded"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="slider-scrollbar">
+              <div class="scrollbar-track">
+                <div class="scrollbar-thumb"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Products -->
+        <div class="slider-products">
+          <!-- Product Box 1-->
+          <div class="product-box">
+            <h3>Birthday store</h3>
+            <div class="boxes">
+              <div class="box">
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_1QC2_2x._SY232_CB662999952_.jpg"
+                  alt=""
+                />
+                <p>Gift for men</p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_2QC2_2x._SY232_CB662999952_.jpg"
+                  alt=""
+                />
+                <p>Gift for women</p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_3QC2_2x._SY232_CB662999952_.jpg"
+                  alt=""
+                />
+                <p>Gift for boys</p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/GWBdaystore/Artboard_4QC2_2x._SY232_CB662999955_.jpg"
+                  alt=""
+                />
+                <p>Gift for girls</p>
+              </div>
+            </div>
+            <a href="#">See More</a>
+          </div>
+
+          <!-- Product Box 2 -->
+          <div class="product-box">
+            <h3>One stop shop for all your wedding shopping</h3>
+            <div class="boxes">
+              <div class="box">
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Wedding-Store/btf/For_her_2x._SY232_CB653484282_.jpg"
+                  alt=""
+                />
+                <p>Shop for her</p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Wedding-Store/btf/For_him_2x._SY232_CB653484282_.jpg"
+                  alt=""
+                />
+                <p>Shop for him</p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Wedding-Store/btf/Pooja_essentials_2x._SY232_CB653484282_.jpg"
+                  alt=""
+                />
+                <p>Pooja essentials</p>
+              </div>
+              <div class="box">
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Wedding-Store/btf/Explore_more_2x._SY232_CB653484282_.jpg"
+                  alt=""
+                />
+                <p>Explore the store</p>
+              </div>
+            </div>
+            <a href="#">See more</a>
+          </div>
+
+          <!-- Product Box 3 -->
+          <div class="product-box">
+            <h3>Deals on smartphones that suits your budget</h3>
+            <div class="boxes">
+              <div class="box">
+                <img src="Images/box-img9.jpg" alt="" />
+                <p>Budget TVs | Starting ₹5,499</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img10.jpg" alt="" />
+                <p>4K TVs | Up to 18 months No Cost EMI</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img11.jpg" alt="" />
+                <p>Big Screens | Save up to ₹30,000</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img12.jpg" alt="" />
+                <p>Utra Premium TVs | Flat 50% off</p>
+              </div>
+            </div>
+            <a href="#">See all deals</a>
+          </div>
+
+          <!-- Product Box 4 -->
+          <div class="product-box">
+            <h3>Welcome offers just for you</h3>
+            <div class="boxes">
+              <img src="Images/box-img13.jpg" alt="" />
+            </div>
+            <a href="#">See all deals</a>
+          </div>
+        </div>
+
+        <!-- Slider Products -->
+        <div class="slider-products">
+          <!-- Product Box 1-->
+          <div class="product-box">
+            <h3>Up to 65% off | Deals on wide range of TVs</h3>
+            <div class="boxes">
+              <div class="box">
+                <img src="Images/box-img1.jpg" alt="" />
+                <p>Budget TVs | Starting ₹5,499</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img2.jpg" alt="" />
+                <p>4K TVs | Up to 18 months No Cost EMI</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img3.jpg" alt="" />
+                <p>Big Screens | Save up to ₹30,000</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img4.jpg" alt="" />
+                <p>Utra Premium TVs | Flat 50% off</p>
+              </div>
+            </div>
+            <a href="#">See all deals</a>
+          </div>
+
+          <!-- Product Box 2 -->
+          <div class="product-box">
+            <h3>Starting ₹79 | Home decor and furnishings</h3>
+            <div class="boxes">
+              <div class="box">
+                <img src="Images/box-img5.jpg" alt="" />
+                <p>Budget TVs | Starting ₹5,499</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img6.jpg" alt="" />
+                <p>4K TVs | Up to 18 months No Cost EMI</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img7.jpg" alt="" />
+                <p>Big Screens | Save up to ₹30,000</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img8.jpg" alt="" />
+                <p>Utra Premium TVs | Flat 50% off</p>
+              </div>
+            </div>
+            <a href="#">See all deals</a>
+          </div>
+
+          <!-- Product Box 3 -->
+          <div class="product-box">
+            <h3>Deals on smartphones that suits your budget</h3>
+            <div class="boxes">
+              <div class="box">
+                <img src="Images/box-img9.jpg" alt="" />
+                <p>Budget TVs | Starting ₹5,499</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img10.jpg" alt="" />
+                <p>4K TVs | Up to 18 months No Cost EMI</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img11.jpg" alt="" />
+                <p>Big Screens | Save up to ₹30,000</p>
+              </div>
+              <div class="box">
+                <img src="Images/box-img12.jpg" alt="" />
+                <p>Utra Premium TVs | Flat 50% off</p>
+              </div>
+            </div>
+            <a href="#">See all deals</a>
+          </div>
+
+          <!-- Product Box 4 -->
+          <div class="product-box">
+            <h3>Welcome offers just for you</h3>
+            <div class="boxes">
+              <img src="Images/box-img13.jpg" alt="" />
+            </div>
+            <a href="#">See all deals</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer onclick="removeOpacity();">
+      <div class="back-to-top">
+        <a href="#top"> Back to Top </a>
+      </div>
+
+      <div class="footer-contents">
+        <div class="footer-text-content">
+          <div class="footer-text-box">
+            <h3>Get to Know Us</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press Releases</a></li>
+              <li><a href="#">Amazon Science</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-text-box">
+            <h3>Connect with Us</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-text-box">
+            <h3>Make Money with Us</h3>
+            <ul>
+              <li><a href="#">Sell on Amazon</a></li>
+              <li><a href="#">Sell under Amazon Accelerator</a></li>
+              <li><a href="#">Protect and Build Your Brand</a></li>
+              <li><a href="#">Amazon Global Selling</a></li>
+              <li><a href="#">Become an Affiliate</a></li>
+              <li><a href="#">Fulfilment by Amazon</a></li>
+              <li><a href="#">Advertise Your Products</a></li>
+              <li><a href="#">Amazon Pay on Merchants</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-text-box">
+            <h3>Let Us Help You</h3>
+            <ul>
+              <li><a href="#">COVID-19 and Amazon</a></li>
+              <li><a href="#">Your Account</a></li>
+              <li><a href="#">Returns Centre</a></li>
+              <li><a href="#">100% Purchase Protection</a></li>
+              <li><a href="#">Amazon App Download</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-country-content">
+          <div class="footer-language flex-div">
+            <img src="Images/amazon-logo.png" alt="" />
+            <div class="footer-language-box flex-div">
+              <img src="Images/globe.png" alt="" />
+              <p>English</p>
+              <div class="footer-arrow">
+                <i class="fa-solid fa-caret-up"></i>
+                <i class="fa-solid fa-caret-down"></i>
+              </div>
+
+              <!-- Language Dropdown -->
+              <div class="footer-lang-dropdown">
+                <div class="footer-langauage-default flex-div lang-div">
+                  <input name="language" type="radio" />
+                  <h3>English - EN</h3>
+                </div>
+
+                <div class="footer-language-list">
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>हिन्दी - HI</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>தமிழ் - TA</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>తెలుగు - TE</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>ಕನ್ನಡ - KN</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>മലയാളം - ML</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>বাংলা - BN</h3>
+                  </div>
+                  <div class="flex-div lang-div">
+                    <input name="language" type="radio" />
+                    <h3>मराठी - MR</h3>
+                  </div>
+
+                  <a href="#" class="footer-lang-learn-more">Learn More</a>
+                </div>
+
+                <!-- Language Dropdown Footer -->
+                <div class="footer-lang-dropdown-footer">
+                  <div class="footer-footer-paragraph flex-div">
+                    <img src="Images/india-flag-icon.png" alt="Indian Flag" />
+                    <p>You are shopping on Amazon.in</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-country">
+            <ul>
+              <li><a href="#">Australia</a></li>
+              <li><a href="#">Brazil</a></li>
+              <li><a href="#">Canada</a></li>
+              <li><a href="#">China</a></li>
+              <li><a href="#">France</a></li>
+              <li><a href="#">Germany</a></li>
+              <li><a href="#">Italy</a></li>
+              <li><a href="#">Japan</a></li>
+              <li><a href="#">Maxico</a></li>
+              <li><a href="#">Netherlands</a></li>
+              <li><a href="#">Poland</a></li>
+              <li><a href="#">Singapore</a></li>
+              <li><a href="#">Spain</a></li>
+              <li><a href="#">Turkey</a></li>
+              <li><a href="#">United Arab Emirates</a></li>
+              <li><a href="#">United Kingdom</a></li>
+              <li><a href="#">United States</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-links-copyright">
+        <div class="footer-links">
+          <div class="footer-links1">
+            <ul class="link-box">
+              <h3>AbeBooks</h3>
+              <li>
+                <a href="#"
+                  >Books, art & <br />
+                  collectibles</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Amazon Web Services</h3>
+              <li>
+                <a href="#"
+                  >Scalable Cloud <br />
+                  Computing Services</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Audible</h3>
+              <li>
+                <a href="#"
+                  >Download <br />
+                  Audio Books</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>IMDb</h3>
+              <li>
+                <a href="#"
+                  >Movies, TV <br />
+                  & Celebrities</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links2">
+            <ul class="link-box">
+              <h3>Shopbop</h3>
+              <li>
+                <a href="#"
+                  >Designer <br />
+                  Fashion Brands</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Amazon Business</h3>
+              <li>
+                <a href="#"
+                  >Everything For <br />
+                  Your Business</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Prime Now</h3>
+              <li>
+                <a href="#"
+                  >2-Hour Delivery <br />
+                  on Everyday Items</a
+                >
+              </li>
+            </ul>
+            <ul class="link-box">
+              <h3>Amazon Prime Music</h3>
+              <li>
+                <a href="#"
+                  >100 million songs, ad-free <br />
+                  Over 15 million podcast episodes</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="copyright-links">
+            <a href="#">Conditions of Use & Sale</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Intrest-Based Ads</a>
+          </div>
+          <div class="copyright-text">
+            © 1996-2024, Amazon.com, Inc. or its affiliates
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
